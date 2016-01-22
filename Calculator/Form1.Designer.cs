@@ -54,6 +54,7 @@
             this.buttonPlus.TabIndex = 4;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = true;
+            this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click);
             // 
             // button3
             // 
@@ -66,7 +67,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(149, 137);
+            this.button7.Location = new System.Drawing.Point(149, 195);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(40, 35);
             this.button7.TabIndex = 9;

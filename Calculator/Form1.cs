@@ -16,5 +16,10 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
