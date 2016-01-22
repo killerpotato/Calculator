@@ -54,6 +54,7 @@
             this.buttonPlus.TabIndex = 4;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = true;
+            this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click);
             // 
             // button3
             // 
@@ -81,6 +82,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -99,6 +101,7 @@
             this.button0.TabIndex = 16;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // button6
             // 
@@ -153,6 +156,7 @@
             this.buttonEquals.TabIndex = 20;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
+            this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
             // 
             // buttonDivide
             // 
