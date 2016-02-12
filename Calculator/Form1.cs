@@ -12,8 +12,7 @@ namespace Calculator
 {
     public partial class FormMain : Form
     {
-        private double firstNumber = 0;
-        private double secondNumber = 0;
+
 
 
         public FormMain()
@@ -21,24 +20,30 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private double add(double firstNumber, double secondNumber)
+        private string add(double firstNumber, double secondNumber)
         {
-           return firstNumber + secondNumber;
-            
+            return (firstNumber + secondNumber).ToString();
         }
 
+        //Eine Methode um die Berechnungen auszuführen!
+        //Die Anderen Click Mehthode, sind nur zum hinzufügen von Zeichen!
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             if(textBoxAusgabe.Text.Contains("+"))
             {
-                secondNumber = Convert.ToDouble(textBoxAusgabe.Text.TrimStart('+'));               
+                double firstNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(0, textBoxAusgabe.Text.Length - textBoxAusgabe.Text.IndexOf('+')));
+                double secondNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(textBoxAusgabe.Text.Length - textBoxAusgabe.Text.IndexOf('+')));             
                 textBoxAusgabe.Text = add(firstNumber, secondNumber).ToString();
             }
         }
 
+        private void addChar()
+        {
+
+        }
+
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToDouble(textBoxAusgabe.Text);
             textBoxAusgabe.Text += "+";
         }
 
