@@ -39,14 +39,20 @@ namespace Calculator
 
         private void addChar(string zeichen)
         {
-            if (textBoxAusgabe.Text == "0" && zeichen != "+")
+            if (Char.IsDigit(zeichen[0]))
             {
-                textBoxAusgabe.Text = zeichen;
+                if (textBoxAusgabe.Text == "0" && zeichen != "+")
+                {
+                    textBoxAusgabe.Text = zeichen;
+                }
+                else
+                {
+                    textBoxAusgabe.Text += zeichen;
+                }
             }
-            else
-            {
-                textBoxAusgabe.Text += zeichen;
-            }
+            textBoxAusgabe.Select();
+            textBoxAusgabe.DeselectAll();
+            textBoxAusgabe.SelectionStart = textBoxAusgabe.Text.Length;
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
@@ -103,5 +109,22 @@ namespace Calculator
         {
             addChar("9");
         }
+
+        private void textBoxAusgabe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                textBoxAusgabe.Text = textBoxAusgabe.Text.Substring(0, textBoxAusgabe.Text.Length -1);
+            }
+        }
+
+  
+
+        
+
+        
+
+
+
     }
 }
