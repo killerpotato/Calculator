@@ -195,12 +195,12 @@
             // 
             // textBoxAusgabe
             // 
-            this.textBoxAusgabe.Enabled = false;
             this.textBoxAusgabe.Location = new System.Drawing.Point(12, 12);
             this.textBoxAusgabe.Name = "textBoxAusgabe";
             this.textBoxAusgabe.Size = new System.Drawing.Size(241, 20);
-            this.textBoxAusgabe.TabIndex = 23;
+            this.textBoxAusgabe.TabIndex = 0;
             this.textBoxAusgabe.Text = "0";
+            this.textBoxAusgabe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAusgabe_KeyPress);
             // 
             // FormMain
             // 

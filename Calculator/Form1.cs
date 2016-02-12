@@ -31,22 +31,28 @@ namespace Calculator
         {
             if(textBoxAusgabe.Text.Contains("+"))
             {
-                double firstNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(0, textBoxAusgabe.Text.Length -1  - textBoxAusgabe.Text.IndexOf('+')));
-                double secondNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring((textBoxAusgabe.Text.Length) - textBoxAusgabe.Text.IndexOf('+')));             
+                double firstNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(0, textBoxAusgabe.Text.Length - textBoxAusgabe.Text.IndexOf('+')));
+                double secondNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(textBoxAusgabe.Text.Length - textBoxAusgabe.Text.IndexOf('+')));             
                 textBoxAusgabe.Text = add(firstNumber, secondNumber).ToString();
             }
         }
 
         private void addChar(string zeichen)
         {
-            if (textBoxAusgabe.Text == "0" && zeichen != "+" && zeichen != "0")
+            if (Char.IsDigit(zeichen[0]))
             {
-                textBoxAusgabe.Text = zeichen;
+                if (textBoxAusgabe.Text == "0" && zeichen != "+")
+                {
+                    textBoxAusgabe.Text = zeichen;
+                }
+                else
+                {
+                    textBoxAusgabe.Text += zeichen;
+                }
             }
-            else
-            {
-                textBoxAusgabe.Text += zeichen;
-            }
+            textBoxAusgabe.Select();
+            textBoxAusgabe.DeselectAll();
+            textBoxAusgabe.SelectionStart = textBoxAusgabe.Text.Length;
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
@@ -103,5 +109,15 @@ namespace Calculator
         {
             addChar("9");
         }
+
+
+  
+
+        
+
+        
+
+
+
     }
 }
