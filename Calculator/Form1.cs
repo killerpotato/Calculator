@@ -31,15 +31,15 @@ namespace Calculator
         {
             if(textBoxAusgabe.Text.Contains("+"))
             {
-                double firstNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(0, textBoxAusgabe.Text.Length - textBoxAusgabe.Text.IndexOf('+')));
-                double secondNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(textBoxAusgabe.Text.Length - textBoxAusgabe.Text.IndexOf('+')));             
+                double firstNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring(0, textBoxAusgabe.Text.Length -1  - textBoxAusgabe.Text.IndexOf('+')));
+                double secondNumber = Convert.ToDouble(textBoxAusgabe.Text.Substring((textBoxAusgabe.Text.Length) - textBoxAusgabe.Text.IndexOf('+')));             
                 textBoxAusgabe.Text = add(firstNumber, secondNumber).ToString();
             }
         }
 
         private void addChar(string zeichen)
         {
-            if (textBoxAusgabe.Text == "0" && zeichen != "+")
+            if (textBoxAusgabe.Text == "0" && zeichen != "+" && zeichen != "0")
             {
                 textBoxAusgabe.Text = zeichen;
             }
