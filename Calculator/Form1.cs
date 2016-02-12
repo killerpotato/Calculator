@@ -37,64 +37,71 @@ namespace Calculator
             }
         }
 
-        private void addChar()
+        private void addChar(string zeichen)
         {
-
+            if (textBoxAusgabe.Text == "0" && zeichen != "+")
+            {
+                textBoxAusgabe.Text = zeichen;
+            }
+            else
+            {
+                textBoxAusgabe.Text += zeichen;
+            }
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += "+";
+            addChar("+");
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 0;
+            addChar("0");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 1;
+            addChar("1");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 2;
+            addChar("2");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 3;
+            addChar("3");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 4;
+            addChar("4");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 5;
+            addChar("5");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 6;
+            addChar("6");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 7;
+            addChar("7");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 8;
+            addChar("8");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBoxAusgabe.Text += 9;
+            addChar("9");
         }
     }
 }
